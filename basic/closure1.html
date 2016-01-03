@@ -1,0 +1,15 @@
+<html>
+
+<body>
+<script type="text/javascript">
+function outer(param){
+   return (function(){
+      alert(param);
+   });
+}
+
+var functRef = outer(Date());
+setTimeout(functRef, 1000);
+</script>
+</body>
+</html>
