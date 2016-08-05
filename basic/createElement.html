@@ -1,0 +1,29 @@
+<html>
+
+<head>
+
+<script>
+ function addBook(){
+   var book = document.getElementById('book');
+   var txtNode = document.createTextNode(book.value);
+   var li = document.createElement('li');
+   li.appendChild(txtNode);
+
+   var list = document.getElementById('list');
+   list.appendChild(li);
+ 
+ }
+
+</script>
+</head>
+
+<body>
+
+<p>
+<input id='book' type='text'>
+<button onClick='addBook()'>Add</button>
+</p>
+<ul id="list"><ul>
+
+</body>
+</html>
