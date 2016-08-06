@@ -1,0 +1,59 @@
+<html>
+
+<head>
+
+  <script>
+  	function addInputField(){
+  		var parent = document.getElementById('book').parentNode;
+
+  		for(var i = 0 ; i < 4 ; i++){
+	  		parent.appendChild(document.createElement('br'));
+	  		parent.appendChild(document.createTextNode('Book Name:'));
+	  		parent.appendChild(document.createElement('input'));
+  		}
+
+  	}
+
+  	function addBook(){
+  		var inputs = document.getElementsByTagName('input');
+  		var len = inputs.length;
+
+  		var list = document.getElementById('list');
+  		var counter = 0;
+
+  		for(var i=0 ; i < len ; i++){
+  			if(inputs[i].value != ''){
+  				var txtNode = document.createTextNode(inputs[i].value);
+  				var li = document.createElement('li');
+  				li.appendChild(txtNode);
+  				list.appendChild(li);
+  				counter++;
+  				inputs[i].value='';
+  			}
+  		}
+
+  		if(counter == 0){
+  			alert('Please input your book name!');
+  		}else{
+  			document.getElementById('bookCount').innerHTML = list.children.length;
+  		}
+
+
+  	}
+
+
+  </script>
+</head>
+
+<body onload="addInputField()">
+   <p>
+     Book Name:<input id='book' type='text'>
+     <button onClick='addBook()'>ADD</button>
+   </p>
+   <p>You have <span id='bookCount'>0</span> book</p>
+   <ul id='list'></ul>
+
+</body>
+
+
+</html>
