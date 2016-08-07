@@ -1,0 +1,27 @@
+<html>
+
+<head>
+
+<script>
+
+
+function showTime(){
+	var d = new Date();
+	document.getElementById('mytime').innerHTML=d.toLocaleTimeString();
+	setTimeout(showTime, 1000);
+}
+
+</script>
+
+</head>
+
+
+<body onLoad='showTime()'>
+
+<h2 id='mytime'></h2>
+
+
+</body>
+
+
+</html>
