@@ -1,0 +1,45 @@
+<html>
+
+<head>
+
+<script>
+setInterval(play, 3000);
+var index=1;
+
+function play(){
+	var imgs = document.getElementById('thumbs')
+					   .getElementsByTagName('img');
+
+
+	var bigImg = document.getElementById('big');
+
+	index++;
+
+	if(index == imgs.length) index = 0;
+
+	bigImg.setAttribute('src', imgs[index].getAttribute('src'))
+
+}
+
+
+
+</script>
+</head>
+
+<body>
+
+<h3>Interval Practice</h3>
+<div id='thumbs'>
+	<img class='small' src='pic/img001.png'/>
+	<img class='small' src='pic/img002.jpg'/>
+	<img class='small' src='pic/img003.jpg'/>
+	<img class='small' src='pic/img004.png'/>
+</div>
+
+<div>
+	<img id='big' src='pic/img001.png'/>
+</div>
+
+</body>
+
+</html>
